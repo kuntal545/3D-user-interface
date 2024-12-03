@@ -19,6 +19,13 @@
            <a href="#" class="logo">
                <img src="pic/klogo.png" alt="">
            </a>
+              <!-- Hamburger menu icon -->
+              <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+    
            <ul id="SideMenu">
                <li><a href="#" class="active">Menu</a></li>
                <li><a href="#">Our Team</a></li>
@@ -41,13 +48,13 @@
      <div class="footer-content">
        <p>&copy; 2024 Kuntal Bej. All rights reserved.</p>
        <div class="footer-links">
-         <a href="https://www.linkedin.com/in/subham-das-01628a1bb?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app">LinkedIn</a>
+         <a href="#">LinkedIn</a>
          <span>|</span>
-         <a href="https://github.com/SubhamDas-RSGIS">GitHub</a>
+         <a href="https://github">GitHub</a>
          <span>|</span>
-         <a href="mailto:subhamdasrsgis@gmail.com">Email Me</a>
+         <a href="mailto:kuntalbej274@gmail.com">Email Me</a>
        </div>
-       <p class="developer">Developed by Kuntal Bej/subham Das</p>
+       <p class="developer">Developed by Kuntal Bej</p>
      </div>
    </footer>
 
@@ -65,33 +72,17 @@
            scaleMobile: 1.00
        });
    });
-   /*====menu show===*/
-   const showMenu = (toggleId, navId) =>{
-    const toggle = document.getElementById(toggleId),
-    nav = document.getElementById(navId)
+      // JavaScript for Hamburger Menu
+// Hamburger Menu Toggle
+const hamburger = document.getElementById('hamburger');
+const sideMenu = document.getElementById('SideMenu');
 
-    if(toggle && nav){
-        toggle.addEventListener('click', ()=>{
-            nav.classList.toggle('show')
-        })
-    }
-}
-showMenu('nav-toggle','nav-menu')
-function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show')
-}
-navLink.forEach(n => n.addEventListener('click', linkAction))
-/*==================== REMOVE MENU MOBILE ====================*/
-const navLink = document.querySelectorAll('.nav__link')
+hamburger.addEventListener('click', () => {
+    sideMenu.classList.toggle('mobile');
+    sideMenu.classList.toggle('show');
+});
 
-function linkAction(){
-    const navMenu = document.getElementById('nav-menu')
-    // When we click on each nav__link, we remove the show-menu class
-    navMenu.classList.remove('show')
-}
-navLink.forEach(n => n.addEventListener('click', linkAction))
+  
    </script>
    
 </body>

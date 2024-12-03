@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar</title>
+    
+    <!-- Add the CDN link for a compatible version of three.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r124/three.min.js"></script>
+    
+    <!-- Add Globe effect -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.globe.min.js"></script>
+
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+        }
+
+        .navbar .logo img {
+            height: 40px;
+        }
+
+        #SideMenu {
+            display: flex;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        #SideMenu li {
+            margin: 0 15px;
+        }
+
+        #SideMenu li a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+
+        #SideMenu li a.active {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        /* Hamburger Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            background-color: white;
+            height: 3px;
+            width: 25px;
+            margin: 4px 0;
+        }
+
+        /* Mobile Menu Styles */
+        #SideMenu.mobile {
+            display: none;
+            flex-direction: column;
+            background-color: #444;
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 200px;
+            padding: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #SideMenu.mobile.show {
+            display: flex;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            #SideMenu {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+   <div class="main-container" id="vanta-background">
+       <div class="navbar">
+           <!-- Logo -->
+           <a href="#" class="logo">
+               <img src="pic/klogo.png" alt="Logo">
+           </a>
+
+           <!-- Hamburger Icon -->
+           <div class="hamburger" id="hamburger">
+               <span></span>
+               <span></span>
+               <span></span>
+           </div>
+
+           <!-- Navigation Menu -->
+           <ul id="SideMenu">
+               <li><a href="#" class="active">Menu</a></li>
+               <li><a href="#">Our Team</a></li>
+               <li><a href="#">About</a></li>
+               <li><a href="#">Contact</a></li>
+               <li><a href="#">Acknowledgment</a></li>
+           </ul>
+       </div>
+
+       <div class="bottom-content">
+           <div class="bottom-left">
+               <h1>Lorem ipsum dolor sit</h1>
+               <p>"Welcome to our teamwork! <br>Hi, I am Kuntal."</p>
+           </div>
+       </div>
+   </div>
+  
+   <!-- Footer -->
+   <footer>
+     <div class="footer-content">
+       <p>&copy; 2024 Kuntal Bej. All rights reserved.</p>
+       <div class="footer-links">
+         <a href="#">LinkedIn</a>
+         <span>|</span>
+         <a href="https://github">GitHub</a>
+         <span>|</span>
+         <a href="mailto:kuntalbej274@gmail.com">Email Me</a>
+       </div>
+       <p class="developer">Developed by Kuntal Bej</p>
+     </div>
+   </footer>
+
+   <!-- JavaScript -->
+   <script>
+   window.addEventListener('DOMContentLoaded', function() {
+       // Vanta.js Globe Effect
+       VANTA.GLOBE({
+           el: "#vanta-background",
+           mouseControls: true,
+           touchControls: true,
+           gyroControls: false,
+           minHeight: 200.00,
+           minWidth: 200.00,
+           scale: 1.00,
+           scaleMobile: 1.00
+       });
+
+       // Hamburger Menu Toggle
+       const hamburger = document.getElementById('hamburger');
+       const sideMenu = document.getElementById('SideMenu');
+
+       hamburger.addEventListener('click', () => {
+           sideMenu.classList.toggle('mobile');
+           sideMenu.classList.toggle('show');
+       });
+   });
+   </script>
+</body>
+</html>
